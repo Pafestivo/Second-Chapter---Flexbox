@@ -1,0 +1,57 @@
+/* * is used to target the whole page  */
+* {
+    /* boxes will size themselves inside the borders of the parent */
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+  }
+  
+  .header {
+    text-align: center;
+    /* Text transform uppercase makes all letters uppercase, it can take other values aswel to adjust the text */
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+  
+  .gallery {
+    /* When displaying a parent as flex, all of its children become flexible */
+    display: flex;
+    /* Flex direction can go in a row or in a column(col) */
+    flex-direction: row; 
+    /* Flex wrap decides whether the content should drop to a new line or not, wrap will drop to a new line. */
+    flex-wrap: wrap;
+    /* This line will decide how to align the flex items. */
+    justify-content: center;
+    align-items: center;
+    /* Gap controls the space between items */
+    gap: 16px;
+    /* Define the max width these flex items are allowed to take */
+    max-width: 1400px;
+    /* margin 0 auto is used to center  */
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  
+  .gallery img {
+    /* The combination of the 100% width and defining a hardcoded max width is used to make sure the picture will use all the space it has but no more than a defined number. */
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    /* in this property, cover is used to cover the entire container, while maintaining the usual image ratio */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* The use of the ::after allows us to add another element at the end of a container, in this case we added a blank photo square to maintain the even structure. */
+  .gallery::after {
+    content: "";
+    width: 350px;
+  }
+  
